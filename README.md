@@ -1,4 +1,4 @@
-# Merdas-Que-o-Zeca-se-lembra
+
 
 ## Description
 This project mines data from the pdfs made available by FPA on their website (https://portal.fpa.pt/) and builds a database.
