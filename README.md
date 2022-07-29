@@ -2,7 +2,7 @@
 
 ## Description
 This project mines data from the pdfs made available by FPA on their website (https://portal.fpa.pt/) and builds a database.
-This project is being developed along with user [mccSantos](https://github.com/mccSantos)
+This project is being developed along with User [mccSantos](https://github.com/mccSantos) .
 ## Install and Run
 Install python and then run these commands:
 - pip install pandas
