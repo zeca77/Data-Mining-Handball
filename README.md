@@ -3,7 +3,9 @@
 ## Description
 This project mines data from the pdfs made available by FPA on their website (https://portal.fpa.pt/) and builds a database.
 This project is being developed along with User [mccSantos](https://github.com/mccSantos) .
-The pdf in the folder https://github.com/zeca77/Data-Mining-Handball/blob/main/227899.pdf is an example of a standard Statistics sheet.
+This PDF 
+https://github.com/zeca77/Data-Mining-Handball/blob/main/227899.pdf 
+is an example of a standard Statistics sheet.
 ## Install and Run
 Install python and then run these commands:
 - pip install pandas
