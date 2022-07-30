@@ -1,0 +1,482 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /games:
+    get:
+      operationId: "games.read_all"
+      tags:
+        - "Games"
+      summary: "Read the list of games"
+      description: "Read the list of games"
+      responses:
+        200:
+          description: "Successful read games list operation"
+          schema:
+            type: "object"
+            properties:
+              championship_name:
+                type: string
+              game_week:
+                type: integer
+              season:
+                type: string
+              date:
+                type: string
+              time:
+                type: string
+              pdf_number:
+                type: integer
+              game_location:
+                type: string
+              home_team_name:
+                type: string
+              away_team_name:
+                type: string
+              home_team_score:
+                type: integer
+              away_team_score:
+                type: integer
+              home_team_score_first_half:
+                type: integer
+              away_team_score_first_half:
+                type: integer
+              home_team_score_second_half:
+                type: integer
+              away_team_score_second_half:
+                type: integer
+              referee1:
+                type: string
+              referee2:
+                type: string
+
+  /games/{game_id}:
+    get:
+      operationId: games.read_one
+      tags:
+        - Games
+      summary: Read one game
+      description: Read one game
+      parameters:
+        - name: game_id
+          in: path
+          description: Id of the game to get
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read game from people data operation
+          schema:
+            type: object
+            properties:
+              championship_name:
+                type: string
+              game_week:
+                type: integer
+              season:
+                type: string
+              date:
+                type: string
+              time:
+                type: string
+              pdf_number:
+                type: integer
+              game_location:
+                type: string
+              home_team_name:
+                type: string
+              away_team_name:
+                type: string
+              home_team_score:
+                type: integer
+              away_team_score:
+                type: integer
+              home_team_score_first_half:
+                type: integer
+              away_team_score_first_half:
+                type: integer
+              home_team_score_second_half:
+                type: integer
+              away_team_score_second_half:
+                type: integer
+              referee1:
+                type: string
+              referee2:
+                type: string
+  /team_info:
+    get:
+      operationId: "team_info.read_all"
+      tags:
+        - "Games"
+      summary: "Read the list of games stats"
+      description: "Read the list of games stats"
+      responses:
+        200:
+          description: "Successful read team info operation"
+          schema:
+            type: "object"
+            properties:
+              game_id:
+                type: string
+              season:
+                type: string
+              name:
+                type: string
+              team_name:
+                type: string
+              number:
+                type: integer
+              goals:
+                type: integer
+              shots:
+                type: integer
+              goals_6M:
+                type: integer
+              shots_6M:
+                type: integer
+              goals_wing:
+                type: integer
+              shots_wing:
+                type: integer
+              goals_9M:
+                type: integer
+              shots_9M:
+                type: integer
+              goals_7M:
+                type: integer
+              shots_7M:
+                type: integer
+              goals_counter_attack:
+                type: integer
+              shots_counter_attack:
+                type: integer
+              goals_empty_goal:
+                type: integer
+              shots_empty_goal:
+                type: integer
+              assists:
+                type: integer
+              technical_foul:
+                type: integer
+              steal:
+                type: integer
+              block:
+                type: integer
+              yellow:
+                type: integer
+              two_minutes:
+                type: integer
+              red:
+                type: integer
+              blue:
+                type: integer
+
+  /team_info/{game_id}/{type}:
+    get:
+      operationId: "team_info.read_game"
+      tags:
+        - "Games"
+      summary: "Read the list of player stats of a single game"
+      description: "Read the list of player stats of a single game"
+      parameters:
+        - name: game_id
+          in: path
+          description: Id of the game to get
+          type: integer
+          required: True
+        - name: type
+          in: path
+          description: 0 if home team 1 if away team
+          type: integer
+          required: True
+      responses:
+        200:
+          description: "Successful read team info operation"
+          schema:
+            type: "object"
+            properties:
+              game_id:
+                type: string
+              season:
+                type: string
+              name:
+                type: string
+              team_name:
+                type: string
+              number:
+                type: integer
+              goals:
+                type: integer
+              shots:
+                type: integer
+              goals_6M:
+                type: integer
+              shots_6M:
+                type: integer
+              goals_wing:
+                type: integer
+              shots_wing:
+                type: integer
+              goals_9M:
+                type: integer
+              shots_9M:
+                type: integer
+              goals_7M:
+                type: integer
+              shots_7M:
+                type: integer
+              goals_counter_attack:
+                type: integer
+              shots_counter_attack:
+                type: integer
+              goals_empty_goal:
+                type: integer
+              shots_empty_goal:
+                type: integer
+              assists:
+                type: integer
+              technical_foul:
+                type: integer
+              steal:
+                type: integer
+              block:
+                type: integer
+              yellow:
+                type: integer
+              two_minutes:
+                type: integer
+              red:
+                type: integer
+              blue:
+                type: integer
+
+
+  /gk_info:
+    get:
+      operationId: "gk_info.read_all"
+      tags:
+        - "Games"
+      summary: "Read the list of goalkeeper games stats"
+      description: "Read the list of goalkeeper games stats"
+      responses:
+        200:
+          description: "Successful read goalkeeper game info operation"
+          schema:
+            type: "object"
+            properties:
+              game_id:
+                type: string
+              season:
+                type: string
+              name:
+                type: string
+              team_name:
+                type: string
+              number:
+                type: integer
+              saves:
+                type: integer
+              shots:
+                type: integer
+              saves_6M:
+                type: integer
+              shots_6M:
+                type: integer
+              saves_wing:
+                type: integer
+              shots_wing:
+                type: integer
+              saves_9M:
+                type: integer
+              shots_9M:
+                type: integer
+              saves_7M:
+                type: integer
+              shots_7M:
+                type: integer
+              saves_counter_attack:
+                type: integer
+              shots_counter_attack:
+                type: integer
+
+  /gk_info/{game_id}/{type}:
+    get:
+      operationId: "gk_info.read_game"
+      tags:
+        - "Games"
+      summary: "Read the list of goalkeeper games stats from a single game"
+      description: "Read the list of goalkeeper games stats from a single game"
+      parameters:
+        - name: game_id
+          in: path
+          description: Id of the game to get
+          type: integer
+          required: True
+        - name: type
+          in: path
+          description: 0 if home team 1 if away team
+          type: integer
+          required: True
+
+      responses:
+        200:
+          description: "Successful read goalkeeper game info operation"
+          schema:
+            type: "object"
+            properties:
+              game_id:
+                type: string
+              season:
+                type: string
+              name:
+                type: string
+              team_name:
+                type: string
+              number:
+                type: integer
+              saves:
+                type: integer
+              shots:
+                type: integer
+              saves_6M:
+                type: integer
+              shots_6M:
+                type: integer
+              saves_wing:
+                type: integer
+              shots_wing:
+                type: integer
+              saves_9M:
+                type: integer
+              shots_9M:
+                type: integer
+              saves_7M:
+                type: integer
+              shots_7M:
+                type: integer
+              saves_counter_attack:
+                type: integer
+              shots_counter_attack:
+                type: integer
+
+  /clubs:
+    get:
+      operationId: "clubs.read_all"
+      tags:
+        - "Clubs"
+      summary: "Read the list of clubs"
+      description: "Read the list of clubs"
+      responses:
+        200:
+          description: "Successful read clubs list operation"
+          schema:
+            type: "object"
+            properties:
+              club_id:
+                type: integer
+              club_name:
+                type: string
+              address:
+                type: string
+              phone_number:
+                type: integer
+              home_ground:
+                type: string
+              image_url:
+                type: string
+  /clubs/{club_id}:
+    get:
+      operationId: clubs.read_one
+      tags:
+        - Clubs
+      summary: Read one club
+      description: Read one club
+      parameters:
+        - name: club_id
+          in: path
+          description: Id of the club to get
+          type: integer
+          required: True
+      responses:
+        200:
+          description: "Successful read clubs list operation"
+          schema:
+            type: "object"
+            properties:
+              club_id:
+                type: integer
+              club_name:
+                type: string
+              address:
+                type: string
+              phone_number:
+                type: integer
+              home_ground:
+                type: string
+              image_url:
+                type: string
+
+  /associates:
+    get:
+      operationId: "associates.read_all"
+      tags:
+        - "Associates"
+      summary: "Read the list of associates"
+      description: "Read the list of associates"
+      responses:
+        200:
+          description: "Successful read associates list operation"
+          schema:
+            type: "object"
+            properties:
+              cipa:
+                type: integer
+              name:
+                type: string
+              date_of_birth:
+                type: string
+              role:
+                type: string
+              picture_url:
+                type: string
+
+  /associates/{cipa}:
+    get:
+      operationId: associates.read_one
+      tags:
+        - Associates
+      summary: Read one associate
+      description: Read one associates
+      parameters:
+        - name: cipa
+          in: path
+          description: cipa of the associate to get
+          type: integer
+          required: True
+      responses:
+        200:
+          description: "Successful read associates list operation"
+          schema:
+            type: "object"
+            properties:
+              cipa:
+                type: integer
+              name:
+                type: string
+              date_of_birth:
+                type: string
+              role:
+                type: string
+              picture_url:
+                type: string
+
