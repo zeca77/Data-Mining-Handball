@@ -480,3 +480,70 @@ paths:
               picture_url:
                 type: string
 
+  /statistics/players/{cipa}/{season}:
+    get:
+      operationId: players.get_player_season_stats
+      tags:
+        - Statistics
+      summary: Read statistics for one player in a certain season
+      description: Read statistics for one player in a certain season
+      parameters:
+        - name: cipa
+          in: path
+          description: cipa of the associate to get
+          type: integer
+          required: True
+        - name: season
+          in: path
+          description: season of the statistics to get
+          type: string
+          required: True
+      responses:
+        200:
+          description: "Successful read statistics operation"
+          schema:
+            type: "object"
+            properties:
+              assists:
+                type: integer
+              blocks:
+                type: integer
+              games:
+                type: integer
+              goals:
+                type: integer
+              shots:
+                type: integer
+              technical_fouls:
+                type: integer
+
+  /statistics/goalkeepers/{cipa}/{season}:
+    get:
+      operationId: players.get_goalkeeper_season_stats
+      tags:
+        - Statistics
+      summary: Read statistics for one goalkeeper in a certain season
+      description: Read statistics for one goalkeeper in a certain season
+      parameters:
+        - name: cipa
+          in: path
+          description: cipa of the associate to get
+          type: integer
+          required: True
+        - name: season
+          in: path
+          description: season of the statistics to get
+          type: string
+          required: True
+      responses:
+        200:
+          description: "Successful read statistics operation"
+          schema:
+            type: "object"
+            properties:
+              games:
+                type: integer
+              saves:
+                type: integer
+              shots:
+                type: integer

@@ -1,0 +1,47 @@
+Certo Jogador queremos:
+	Para esta época:
+		-Golos esta época
+		-Média de Golos por Jogo 
+		-Média de Remates
+		-Média Eficácia
+		-Média Falhas Técnicas
+		-Pie Chart Diferentes Zonas de Remate
+		-Pie Chart Sucesso das Diferentes Zonas
+		-Assistências
+		-Blocos
+Certo Guarda-Redes queremos:
+	Para esta época:
+		-Golos Sofridos
+		-Defesas
+		-Média de Defesas
+		-Assistências
+		-Golos Marcados
+		-Pie Chart Diferentes Zonas de Remate
+		-Pie Chart Sucesso das Diferentes Zonas
+
+
+Por Jogo:
+	Por Equipa:
+		-Remates
+		-Golos
+		-Eficácia
+		-Pie Chart Diferentes Zonas de Remate
+		-Pie Chart Sucesso das Diferentes Zonas
+		-Forma
+		-Blocos
+		-% de Remates à baliza
+		-Eficácia da Defesa (Nº de Remates/ Nº Defesas + Blocos
+		
+
+Por Equipa:
+	Por Época:
+		-Remates
+		-Golos
+		-Eficácia
+		-Pie Chart Diferentes Zonas de Remate
+		-Pie Chart Sucesso das Diferentes Zonas
+		-Blocos
+		-% de Remates à baliza
+		-Eficácia da Defesa (Nº de Remates/ Nº Defesas + Blocos
+		-Análise dos GR + Defesa
+

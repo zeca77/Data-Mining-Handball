@@ -22,15 +22,22 @@ def get_lines(filename, api_key):
         content = file.json()['data']['content']
     except KeyError:
         try:
-            print("Trying again:")
+            print("Key Error:Trying again:")
             time.sleep(3)
             id = response_json['data']["id"]
 
             file = requests.get(f'https://api.convertio.co/convert/{id}/dl')
             content = file.json()['data']['content']
         except KeyError:
-            return [], response_json['error']
-    #
+            try:
+                print("Key Error 2: Trying again:")
+                time.sleep(5)
+                id = response_json['data']["id"]
+
+                file = requests.get(f'https://api.convertio.co/convert/{id}/dl')
+                content = file.json()['data']['content']
+            except KeyError:
+                return [], response_json['error']  #
     lines = base64.b64decode(content).decode('utf-8')
     lines = lines.replace('\r\n\r\n', '\r\n').splitlines()
     lines = list(filter(None, lines))

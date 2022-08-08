@@ -8,6 +8,7 @@ def get_cipa_info(game_nr):
     url = f"http://si.fpa.pt/fap_sa/usrpck_print.print_boletim?p_sessao=1&P_ID_PROVA_JOGO={game_nr}&p_layout=P300632"
     result = requests.get(url)
     doc = BeautifulSoup(result.text, "html.parser")
+    game_week = doc.find_all(text=lambda x: x and "Jornada" in x)[0].split('Jornada nº ')[1]
 
     def get_team_tables():
         tables = doc.find_all(class_="tabela")
@@ -45,8 +46,4 @@ def get_cipa_info(game_nr):
     home_team_df[['number', 'CIPA']] = home_team_df[['number', 'CIPA']].astype(int)
     away_team_df[['number', 'CIPA']] = away_team_df[['number', 'CIPA']].astype(int)
 
-    return home_team_df, away_team_df
-
-
-home_team_info, away_team_info = get_cipa_info(
-    game_nr='227900')
+    return home_team_df, away_team_df, game_week

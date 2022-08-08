@@ -20,5 +20,7 @@ Install python and then run these commands:
 - pip install sqlalchemy_utils	
 - pip install flask_cors
 - pip install flask
+- pip install mysql-connector
+- pip install marshmallow-sqlalchemy
 
 Run 'build database'

@@ -28,4 +28,4 @@ def get_page_info(page_lines, filename, cipa_info, club_id):
                              page_lines[final_team_index + 2].split()).drop('name', axis=1).drop('CIPA', axis=1)
     gk_dataframe = pd.merge(cipa_info, gk_dataframe, how='inner', on='number')
 
-    return team_dataframe, gk_dataframe
+    return team_dataframe.dropna(), gk_dataframe.dropna()

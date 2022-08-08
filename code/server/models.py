@@ -101,8 +101,7 @@ class Club(db.Model):
     __tablename__ = 'clubs'
     club_id = db.Column(db.Integer, primary_key=True)
     club_name = db.Column(db.String(60))
-    address = db.Column(db.String(60))
-    phone_number = db.Column(db.Integer)
+    address = db.Column(db.String(100))
     home_ground = db.Column(db.String(60))
     image_url = db.Column(db.String(120))
 

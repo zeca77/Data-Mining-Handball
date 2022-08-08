@@ -6,6 +6,7 @@ import pandas as pd
 
 
 # this returns the dataframe of goalkeepers
+
 def set_gk_df(filename, season, club_id, gk_info, gk_columns, gk_cls):
     if gk_info.ndim == 1:
         gk_dataframe = pd.DataFrame(columns=gk_columns)
